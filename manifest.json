@@ -1,0 +1,26 @@
+{
+  "name": "Pendientes",
+  "short_name": "Pendientes",
+  "description": "Dark spatial task management",
+  "start_url": "./index.html",
+  "scope": "./",
+  "display": "standalone",
+  "orientation": "portrait",
+  "background_color": "#0a0a0b",
+  "theme_color": "#0a0a0b",
+  "categories": ["productivity"],
+  "icons": [
+    {
+      "src": "data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 192 192'><rect fill='%23000000' width='192' height='192' rx='45'/><text x='96' y='135' font-size='120' font-family='system-ui' font-weight='bold' text-anchor='middle' fill='%23ffffff'>✓</text></svg>",
+      "sizes": "192x192",
+      "type": "image/svg+xml",
+      "purpose": "any"
+    },
+    {
+      "src": "data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 192 192'><rect fill='%23000000' width='192' height='192' rx='45'/><text x='96' y='135' font-size='120' font-family='system-ui' font-weight='bold' text-anchor='middle' fill='%23ffffff'>✓</text></svg>",
+      "sizes": "192x192",
+      "type": "image/svg+xml",
+      "purpose": "maskable"
+    }
+  ]
+}

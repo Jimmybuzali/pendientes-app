@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover, user-scalable=no">
+    <meta name="description" content="Pendientes - Dark Spatial Task Management">
+    <meta name="theme-color" content="#0a0a0a">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <meta name="apple-mobile-web-app-title" content="Pendientes">
+    <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 180 180'><rect fill='%23000000' width='180' height='180'/><text x='90' y='110' font-size='90' font-family='system-ui' font-weight='bold' text-anchor='middle' fill='%23ffffff'>✓</text></svg>">
+    <link rel="manifest" href="manifest.json">
+    <title>Pendientes</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div id="app">
+        <!-- HOME SCREEN -->
+        <screen id="screen-home" class="screen screen-active">
+            <div class="home-container">
+                <div class="home-background"></div>
+
+                <div class="home-content">
+                    <div class="home-animation">
+                        <img src="CIRCLE.gif" alt="Animated circle" class="animated-orb-image">
+                    </div>
+
+                    <nav class="home-nav">
+                        <button class="nav-item" data-screen="pendientes">
+                            <span class="nav-label">PENDIENTES</span>
+                            <span class="nav-counter" id="home-pending-count">00</span>
+                        </button>
+
+                        <button class="nav-item" data-screen="completados">
+                            <span class="nav-label">COMPLETADOS</span>
+                            <span class="nav-counter" id="home-completed-count">00</span>
+                        </button>
+                    </nav>
+                </div>
+            </div>
+        </screen>
+
+        <!-- PENDIENTES SCREEN -->
+        <screen id="screen-pendientes" class="screen">
+            <div class="pendientes-container">
+                <header class="screen-header">
+                    <button class="back-button" data-screen="home">←</button>
+                    <h1>PENDIENTES</h1>
+                </header>
+
+                <div class="pendientes-content">
+                    <div class="tasks-list-container">
+                        <ul class="tasks-list" id="tasksList"></ul>
+                        <div class="empty-state" id="emptyState">
+                            SIN PENDIENTES
+                        </div>
+                    </div>
+                </div>
+
+                <div class="add-task-control" id="addTaskControl">
+                    <button class="add-toggle-button" id="addToggle">
+                        + AGREGAR PENDIENTE
+                    </button>
+                    <form class="add-task-form hidden" id="addTaskForm">
+                        <input
+                            type="text"
+                            id="taskInput"
+                            class="task-input"
+                            placeholder="Escribe un pendiente…"
+                            autocomplete="off"
+                            spellcheck="false">
+                        <button type="submit" class="task-confirm">✓</button>
+                    </form>
+                </div>
+            </div>
+        </screen>
+
+        <!-- COMPLETADOS SCREEN -->
+        <screen id="screen-completados" class="screen">
+            <div class="completados-container">
+                <header class="screen-header">
+                    <button class="back-button" data-screen="home">←</button>
+                    <h1 style="flex: 1; text-align: center;">COMPLETADOS</h1>
+                </header>
+
+                <div class="completados-content">
+                    <ul class="completed-list" id="completedList"></ul>
+                    <div class="empty-state" id="emptyCompletedState">
+                        SIN COMPLETADOS
+                    </div>
+                </div>
+
+                <div class="completed-actions-footer" id="completedActionsFooter">
+                    <button class="delete-all-button" id="deleteAllButton">ELIMINAR TODO</button>
+                </div>
+            </div>
+        </screen>
+
+        <!-- CONFIRMATION MODAL -->
+        <div class="modal-backdrop" id="modalBackdrop"></div>
+        <div class="confirmation-modal" id="confirmationModal">
+            <div class="modal-content">
+                <div class="modal-title" id="modalTitle">¿COMPLETAR?</div>
+                <div class="modal-actions">
+                    <button class="modal-button modal-cancel" id="modalCancel">CANCELAR</button>
+                    <button class="modal-button modal-confirm" id="modalConfirm">COMPLETAR</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="app.js"></script>
+</body>
+</html>
