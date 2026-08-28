@@ -1,4 +1,4 @@
-const CACHE_NAME = 'pendientes-v2';
+const CACHE_NAME = 'pendientes-v3';
 const ASSETS = [
     './',
     './index.html',
