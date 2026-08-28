@@ -1,0 +1,12 @@
+{
+  "name": "pendientes-app",
+  "version": "1.0.0",
+  "description": "Dark spatial task management app with Liquid Glass effects",
+  "main": "index.html",
+  "scripts": {
+    "dev": "python -m http.server 3000"
+  },
+  "keywords": ["task", "todo", "pwa"],
+  "author": "jimmybuzali",
+  "license": "MIT"
+}
